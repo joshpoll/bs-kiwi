@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "*"
+  },
+  "dependencies": {
+    "@glennsl/bs-json": "^5.0.2"
   }
 }
