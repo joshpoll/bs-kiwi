@@ -21,7 +21,7 @@
   // Js.log(test->KiwiInterface.solve->Belt.HashMap.String.toArray)
 }
 
-// Simple Max Encoding
+// Simple Max Encoding. Doesn't require making new variables, but may not guarantee max is correct.
 {
   open KiwiInterface
   let test = {
