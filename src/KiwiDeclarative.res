@@ -19,29 +19,29 @@ type variableOption =
   // entire problem every time and/or if we need to keep track of all the variables
   | Derived
 
-type solver = (Kiwi.solver, list<constraint_>)
+type solver = (Kiwi.solver, array<constraint_>)
 
 let mkSolver = (): solver => {
   let solver = mkSolver()
-  (solver, list{})
+  (solver, [])
 }
 
 let solve = (
   declarativeSolver: solver,
   ~variables: variableMap<variableOption>,
-  ~constraints: list<constraint_>,
+  ~constraints: array<constraint_>,
 ): solver => {
   let (solver, oldConstraints) = declarativeSolver
   // diff constraints
   // remove old constraints
-  List.fold_left((_, c) =>
-    if !List.exists(x => x == c, constraints) {
+  Array.fold_left((_, c) =>
+    if !Array.exists(x => x == c, constraints) {
       solver->removeConstraint(c)
     }
   , (), oldConstraints)
 
   // add new constraints
-  List.fold_left((_, c) =>
+  Array.fold_left((_, c) =>
     if !(solver->hasConstraint(c)) {
       solver->addConstraint(c)
     }
