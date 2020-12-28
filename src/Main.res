@@ -111,3 +111,26 @@
   Js.log(test->KiwiInterface.Encode.system->Js.Json.stringifyWithSpace(4))
   Js.log(test->KiwiInterface.solve->Belt.HashMap.String.toArray)
 }
+
+{
+  open KiwiMax
+  let test = {
+    variables: [
+      {id: "a", varOpt: Suggest(2., Kiwi.Strength.strong)},
+      {id: "b", varOpt: Suggest(3., Kiwi.Strength.strong)},
+      {id: "c", varOpt: Suggest(5., Kiwi.Strength.strong)},
+      {id: "d", varOpt: Derived},
+    ],
+    constraints: [
+      {
+        lhs: AExpr(Var("d")),
+        op: Eq,
+        rhs: CExpr(Max([Var("a"), Var("b"), Var("c")])),
+        strength: Kiwi.Strength.required,
+      }
+    ],
+  }
+  Js.log2("kiwiMax", test->KiwiMax.Encode.system->Js.Json.stringifyWithSpace(4))
+  Js.log2("kiwiMaxLowered", test->KiwiMax.Lower.system->KiwiInterface.Encode.system->Js.Json.stringifyWithSpace(4))
+  Js.log2("kiwiMaxLoweredSolved", test->KiwiMax.Lower.system->KiwiInterface.solve->Belt.HashMap.String.toArray)
+}
