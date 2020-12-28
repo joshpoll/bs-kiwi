@@ -1,16 +1,16 @@
 // Defines Kiwi Json encoding
 
-type varOpt =
-  | Suggest(float, Kiwi.Strength.t)
-  // TODO: maybe stays should be inferred? a local change requires a suggest and derives.
-  | Stay(Kiwi.Strength.t)
-  // TODO: get rid of derived variables entirely? only really needed if we want to specify the
-  // entire problem every time and/or if we need to keep track of all the variables
-  | Derived
+// type varOpt =
+//   | Suggest(float, Kiwi.Strength.t)
+//   // TODO: maybe stays should be inferred? a local change requires a suggest and derives.
+//   | Stay(Kiwi.Strength.t)
+//   // TODO: get rid of derived variables entirely? only really needed if we want to specify the
+//   // entire problem every time and/or if we need to keep track of all the variables
+//   | Derived
 
 type variable = {
   id: string,
-  varOpt: varOpt,
+  varOpt: KiwiDeclarative.variableOption,
 }
 
 type rec expr =
@@ -45,7 +45,7 @@ module Encode = {
   let varOpt = r => {
     open! Json.Encode
     switch r {
-    | Suggest(value, strength) =>
+    | KiwiDeclarative.Suggest(value, strength) =>
       object_(
         [
           ("opt", string("suggest")),
@@ -114,4 +114,71 @@ module Encode = {
       ] |> Array.to_list,
     )
   }
+}
+
+let convertExpr = (varIdMap, e) => {
+  // keep varIdMap in scope
+  let rec convertExprAux = e => {
+    open Kiwi
+    switch e {
+    | Num(x) => mkNumExpression(x)
+    | Var(vid) =>
+      switch varIdMap->Belt.HashMap.String.get(vid) {
+      | Some(v) => mkVarExpression(v)
+      | None => raise(Not_found)
+      }
+    | Add(e1, e2) => plus(convertExprAux(e1), convertExprAux(e2))
+    | Sub(e1, e2) => minus(convertExprAux(e1), convertExprAux(e2))
+    | Mul(e1, f2) => multiply(convertExprAux(e1), f2)
+    | Div(e1, f2) => divide(convertExprAux(e1), f2)
+    }
+  }
+  convertExprAux(e)
+}
+
+let convertOperator = op =>
+  switch op {
+  | Le => Kiwi.Operator.le
+  | Ge => Kiwi.Operator.ge
+  | Eq => Kiwi.Operator.eq
+  }
+
+let convertConstraint_ = (varIdMap, {lhs, op, rhs, strength}) => {
+  Kiwi.mkConstraint(
+    ~strength,
+    convertExpr(varIdMap, lhs),
+    convertOperator(op),
+    convertExpr(varIdMap, rhs),
+  )
+}
+
+// takes an input spec, creates a new solver, solves the problem, and returns variable map. NOT INCREMENTAL (yet)!
+let solve = ({variables, constraints}) => {
+  open! Belt
+  // build variables and auxiliary map for building constraints
+  let varIdMap = HashMap.String.make(~hintSize=Array.length(variables))
+  let kiwiDeclarativeVars = ref(Map.make(~id=module(KiwiDeclarative.VariableComparable)))
+
+  variables->Array.forEach(v => {
+    let var = Kiwi.mkVariable(~name=v.id, ())
+    varIdMap->HashMap.String.set(v.id, var)
+    kiwiDeclarativeVars := kiwiDeclarativeVars.contents->Map.set(var, v.varOpt)
+  })
+
+  // build constraints
+  let kiwiDeclarativeConstraints = constraints->Array.map(convertConstraint_(varIdMap))
+
+  // build solver and solve!
+  let _ =
+    KiwiDeclarative.mkSolver()->KiwiDeclarative.solve(
+      ~variables=kiwiDeclarativeVars.contents,
+      ~constraints=kiwiDeclarativeConstraints,
+    )
+
+  // extract solutions
+  let varSolutions = varIdMap->HashMap.String.copy
+  varSolutions
+  ->HashMap.String.toArray
+  ->Array.map(((vid, var)) => (vid, var->Kiwi.value()))
+  ->HashMap.String.fromArray
 }
