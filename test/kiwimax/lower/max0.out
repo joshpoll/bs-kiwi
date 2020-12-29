@@ -1,0 +1,90 @@
+{
+    "variables": [
+        {
+            "id": "a",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 2,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "b",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 3,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "c",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 5,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "d",
+            "varOpt": {
+                "opt": "derived"
+            }
+        },
+        {
+            "id": "max_0",
+            "varOpt": {
+                "opt": "derived"
+            }
+        }
+    ],
+    "constraints": [
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "d"
+            },
+            "op": "==",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1001001000
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "a"
+            },
+            "op": "<=",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1001001000
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "b"
+            },
+            "op": "<=",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1001001000
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "c"
+            },
+            "op": "<=",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1001001000
+        }
+    ]
+}
