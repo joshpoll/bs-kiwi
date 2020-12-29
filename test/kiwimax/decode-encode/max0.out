@@ -1,0 +1,67 @@
+{
+    "variables": [
+        {
+            "id": "a",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 2,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "b",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 3,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "c",
+            "varOpt": {
+                "opt": "suggest",
+                "value": 5,
+                "strength": 1000000
+            }
+        },
+        {
+            "id": "d",
+            "varOpt": {
+                "opt": "derived"
+            }
+        }
+    ],
+    "constraints": [
+        {
+            "lhs": {
+                "tag": "aexpr",
+                "value": {
+                    "tag": "var",
+                    "value": "d"
+                }
+            },
+            "op": "==",
+            "rhs": {
+                "tag": "cexpr",
+                "value": {
+                    "tag": "max",
+                    "aes": [
+                        {
+                            "tag": "var",
+                            "value": "a"
+                        },
+                        {
+                            "tag": "var",
+                            "value": "b"
+                        },
+                        {
+                            "tag": "var",
+                            "value": "c"
+                        }
+                    ]
+                }
+            },
+            "strength": 1001001000
+        }
+    ]
+}

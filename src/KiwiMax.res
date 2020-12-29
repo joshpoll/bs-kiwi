@@ -51,8 +51,9 @@ type system = {
 }
 
 module Encode = {
-  let varOpt = r => {
-    open! Json.Encode
+  open! Json.Encode
+
+  let varOpt = r =>
     switch r {
     | KiwiDeclarative.Suggest(value, strength) =>
       object_(
@@ -66,15 +67,10 @@ module Encode = {
       object_([("opt", string("stay")), ("strength", float(strength))] |> Array.to_list)
     | Derived => object_([("opt", string("derived"))] |> Array.to_list)
     }
-  }
 
-  let variable = r => {
-    open! Json.Encode
-    object_([("id", string(r.id)), ("varOpt", varOpt(r.varOpt))] |> Array.to_list)
-  }
+  let variable = r => object_([("id", string(r.id)), ("varOpt", varOpt(r.varOpt))] |> Array.to_list)
 
-  let rec aexpr = r => {
-    open! Json.Encode
+  let rec aexpr = r =>
     switch r {
     | Num(x) => object_([("tag", string("num")), ("value", float(x))] |> Array.to_list)
     | Var(v) => object_([("tag", string("var")), ("value", string(v))] |> Array.to_list)
@@ -87,35 +83,27 @@ module Encode = {
     | Div(ae1, f2) =>
       object_([("tag", string("/")), ("ae1", aexpr(ae1)), ("f2", float(f2))] |> Array.to_list)
     }
-  }
 
-  let cexpr = r => {
-    open! Json.Encode
+  let cexpr = r =>
     switch r {
     | Max(aes) => object_([("tag", string("max")), ("aes", array(aexpr, aes))] |> Array.to_list)
     | Min(aes) => object_([("tag", string("min")), ("aes", array(aexpr, aes))] |> Array.to_list)
     }
-  }
 
-  let expr = r => {
-    open! Json.Encode
+  let expr = r =>
     switch r {
     | AExpr(ae) => object_([("tag", string("aexpr")), ("value", aexpr(ae))] |> Array.to_list)
     | CExpr(ce) => object_([("tag", string("cexpr")), ("value", cexpr(ce))] |> Array.to_list)
     }
-  }
 
-  let operator = r => {
-    open! Json.Encode
+  let operator = r =>
     switch r {
     | Le => string("<=")
     | Ge => string(">=")
     | Eq => string("==")
     }
-  }
 
-  let constraint_ = r => {
-    open! Json.Encode
+  let constraint_ = r =>
     object_(
       [
         ("lhs", expr(r.lhs)),
@@ -124,20 +112,98 @@ module Encode = {
         ("strength", float(r.strength)),
       ] |> Array.to_list,
     )
-  }
 
   let variables = Json.Encode.array(variable)
 
   let constraints = Json.Encode.array(constraint_)
 
-  let system = r => {
-    open! Json.Encode
+  let system = r =>
     object_(
       [
         ("variables", variables(r.variables)),
         ("constraints", constraints(r.constraints)),
       ] |> Array.to_list,
     )
+}
+module Decode = {
+  open! Json.Decode
+
+  exception DecodeError
+
+  let strengthName = json =>
+    switch string(json) {
+    | "required" => Kiwi.Strength.required
+    | "strong" => Kiwi.Strength.strong
+    | "medium" => Kiwi.Strength.medium
+    | "weak" => Kiwi.Strength.weak
+    | _ => raise(DecodeError)
+    }
+
+  let strengthNum = json => float(json)
+
+  let strength = either(strengthName, strengthNum)
+
+  let varOpt = json =>
+    switch json |> field("opt", string) {
+    | "suggest" =>
+      KiwiDeclarative.Suggest(json |> field("value", float), json |> field("strength", float))
+    | "stay" => Stay(json |> field("strength", strength))
+    | "derived" => Derived
+    | _ => raise(DecodeError)
+    }
+
+  let variable = json => {
+    id: json |> field("id", string),
+    varOpt: json |> field("varOpt", varOpt),
+  }
+
+  let rec aexpr = json =>
+    switch json |> field("tag", string) {
+    | "num" => Num(json |> field("value", float))
+    | "var" => Var(json |> field("value", string))
+    | "+" => Add(json |> field("ae1", aexpr), json |> field("ae2", aexpr))
+    | "-" => Sub(json |> field("ae1", aexpr), json |> field("ae2", aexpr))
+    | "*" => Mul(json |> field("ae1", aexpr), json |> field("f2", float))
+    | "/" => Div(json |> field("ae1", aexpr), json |> field("f2", float))
+    | _ => raise(DecodeError)
+    }
+
+  let cexpr = json =>
+    switch json |> field("tag", string) {
+    | "max" => Max(json |> field("aes", array(aexpr)))
+    | "min" => Min(json |> field("aes", array(aexpr)))
+    | _ => raise(DecodeError)
+    }
+
+  let expr = json =>
+    switch json |> field("tag", string) {
+    | "aexpr" => AExpr(json |> field("value", aexpr))
+    | "cexpr" => CExpr(json |> field("value", cexpr))
+    | _ => raise(DecodeError)
+    }
+
+  let operator = json =>
+    switch string(json) {
+    | "<=" | "le" => Le
+    | ">=" | "ge" => Ge
+    | "==" | "eq" => Eq
+    | _ => raise(DecodeError)
+    }
+
+  let constraint_ = json => {
+    lhs: json |> field("lhs", expr),
+    op: json |> field("op", operator),
+    rhs: json |> field("rhs", expr),
+    strength: json |> field("strength", strength),
+  }
+
+  let variables = Json.Decode.array(variable)
+
+  let constraints = Json.Decode.array(constraint_)
+
+  let system = json => {
+    variables: json |> field("variables", variables),
+    constraints: json |> field("constraints", constraints),
   }
 }
 
@@ -177,8 +243,8 @@ module Lower = {
   // Currently uses simple encoding.
   let cexpr = ce => {
     let newVarName = switch ce {
-      | Max(_) => "max_" ++ genFresh()
-      | Min(_) => "min_" ++ genFresh()
+    | Max(_) => "max_" ++ genFresh()
+    | Min(_) => "min_" ++ genFresh()
     }
     let newVarExpr = Var(newVarName)
     let newVar = {

@@ -2,10 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
   "name": "rescript-project-template",
   "version": "0.0.1",
-  "sources": {
-    "dir" : "src",
-    "subdirs" : true
-  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "test",
+      "subdirs": true,
+      "type": "dev"
+    }
+  ],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
@@ -15,6 +22,6 @@
     "@glennsl/bs-json"
   ],
   "warnings": {
-    "error" : "+101"
+    "error": "+101"
   },
 }

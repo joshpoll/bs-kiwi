@@ -19,3 +19,7 @@ npm install
 ```sh
 node src/Demo.bs.js
 ```
+
+## Test
+
+Testing infrastructure is WIP, but currently relies on https://github.com/cucapra/turnt.

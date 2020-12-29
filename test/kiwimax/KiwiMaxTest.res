@@ -1,0 +1,1 @@
+Util.readStdInAsUtf8Sync |> Js.log
