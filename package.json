@@ -9,7 +9,11 @@
   "keywords": [
     "rescript"
   ],
-  "author": "",
+  "author": {
+    "name": "Josh Pollock",
+    "email": "jopo@mit.edu",
+    "url": "https://joshmpollock.com/"
+  },
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "*"
