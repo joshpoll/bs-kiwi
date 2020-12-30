@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
-  "name": "rescript-project-template",
+  "name": "bs-kiwi",
   "version": "0.0.1",
   "sources": [
     {
