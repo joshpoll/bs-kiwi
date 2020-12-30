@@ -146,7 +146,7 @@ module Decode = {
   let varOpt = json =>
     switch json |> field("opt", string) {
     | "suggest" =>
-      KiwiDeclarative.Suggest(json |> field("value", float), json |> field("strength", float))
+      KiwiDeclarative.Suggest(json |> field("value", float), json |> field("strength", strength))
     | "stay" => Stay(json |> field("strength", strength))
     | "derived" => Derived
     | _ => raise(DecodeError)

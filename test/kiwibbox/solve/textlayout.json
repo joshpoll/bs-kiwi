@@ -1,0 +1,353 @@
+{
+  "variables": [
+    {
+      "id": "numNameGap",
+      "varOpt": {
+        "opt": "suggest",
+        "value": 9.5,
+        "strength": "strong"
+      }
+    },
+    {
+      "id": "nameGuide",
+      "varOpt": {
+        "opt": "suggest",
+        "value": 50,
+        "strength": "strong"
+      }
+    },
+    {
+      "id": "nameInstrsGap",
+      "varOpt": {
+        "opt": "suggest",
+        "value": 10,
+        "strength": "strong"
+      }
+    },
+    {
+      "id": "courseGap",
+      "varOpt": {
+        "opt": "suggest",
+        "value": 10,
+        "strength": "strong"
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseNum1.right"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "numNameGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName1.left"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseNum2.right"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "numNameGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName2.left"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseNum3.right"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "numNameGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName3.left"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName1.left"
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "nameGuide"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName2.left"
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "nameGuide"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "courseName3.left"
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "nameGuide"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseName1.bottom"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "nameInstrsGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "instructors1.top"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseName2.bottom"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "nameInstrsGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "instructors2.top"
+        }
+      },
+      "strength": "strong"
+    }, {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "courseName3.bottom"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "nameInstrsGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "instructors3.top"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "course1.bottom"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "courseGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "course2.top"
+        }
+      },
+      "strength": "strong"
+    },
+    {
+      "lhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "+",
+          "ae1": {
+            "tag": "var",
+            "value": "course2.bottom"
+          },
+          "ae2": {
+            "tag": "var",
+            "value": "courseGap"
+          }
+        }
+      },
+      "op": "==",
+      "rhs": {
+        "tag": "aexpr",
+        "value": {
+          "tag": "var",
+          "value": "course3.top"
+        }
+      },
+      "strength": "strong"
+    }
+  ],
+  "bboxes": [
+    {
+      "id": "courseName1",
+      "children": []
+    },
+    {
+      "id": "courseName2",
+      "children": []
+    },
+    {
+      "id": "courseName3",
+      "children": []
+    },
+    {
+      "id": "courseNum1",
+      "children": []
+    },
+    {
+      "id": "courseNum2",
+      "children": []
+    },
+    {
+      "id": "courseNum3",
+      "children": []
+    },
+    {
+      "id": "instructors1",
+      "children": []
+    },
+    {
+      "id": "instructors2",
+      "children": []
+    },
+    {
+      "id": "instructors3",
+      "children": []
+    },
+    {
+      "id": "course1",
+      "children": [
+        "courseName1",
+        "courseNum1",
+        "instructors1"
+      ]
+    },
+    {
+      "id": "course2",
+      "children": [
+        "courseName2",
+        "courseNum2",
+        "instructors2"
+      ]
+    },
+    {
+      "id": "course3",
+      "children": [
+        "courseName3",
+        "courseNum3",
+        "instructors3"
+      ]
+    }
+  ]
+}

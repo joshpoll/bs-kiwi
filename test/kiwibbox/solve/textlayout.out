@@ -1,0 +1,1033 @@
+variables [
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 79,
+      _name: 'course1.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 82,
+      _name: 'course1.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 83,
+      _name: 'course1.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 81,
+      _name: 'course1.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 76,
+      _name: 'course1.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 77,
+      _name: 'course1.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 78,
+      _name: 'course1.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 80,
+      _name: 'course1.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 87,
+      _name: 'course2.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 90,
+      _name: 'course2.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 91,
+      _name: 'course2.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 89,
+      _name: 'course2.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 84,
+      _name: 'course2.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 85,
+      _name: 'course2.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 86,
+      _name: 'course2.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 88,
+      _name: 'course2.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 95,
+      _name: 'course3.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 98,
+      _name: 'course3.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 99,
+      _name: 'course3.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 97,
+      _name: 'course3.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 92,
+      _name: 'course3.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 93,
+      _name: 'course3.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 94,
+      _name: 'course3.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 96,
+      _name: 'course3.width'
+    },
+    0
+  ],
+  [
+    Variable { _value: 0, _context: null, _id: 3, _name: 'courseGap' },
+    { TAG: 0, _0: 10, _1: 1000000 }
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 7,
+      _name: 'courseName1.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 10,
+      _name: 'courseName1.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 11,
+      _name: 'courseName1.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 9,
+      _name: 'courseName1.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 4,
+      _name: 'courseName1.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 5,
+      _name: 'courseName1.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 6,
+      _name: 'courseName1.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 8,
+      _name: 'courseName1.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 15,
+      _name: 'courseName2.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 18,
+      _name: 'courseName2.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 19,
+      _name: 'courseName2.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 17,
+      _name: 'courseName2.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 12,
+      _name: 'courseName2.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 13,
+      _name: 'courseName2.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 14,
+      _name: 'courseName2.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 16,
+      _name: 'courseName2.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 23,
+      _name: 'courseName3.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 26,
+      _name: 'courseName3.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 27,
+      _name: 'courseName3.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 25,
+      _name: 'courseName3.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 20,
+      _name: 'courseName3.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 21,
+      _name: 'courseName3.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 22,
+      _name: 'courseName3.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 24,
+      _name: 'courseName3.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 31,
+      _name: 'courseNum1.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 34,
+      _name: 'courseNum1.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 35,
+      _name: 'courseNum1.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 33,
+      _name: 'courseNum1.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 28,
+      _name: 'courseNum1.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 29,
+      _name: 'courseNum1.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 30,
+      _name: 'courseNum1.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 32,
+      _name: 'courseNum1.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 39,
+      _name: 'courseNum2.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 42,
+      _name: 'courseNum2.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 43,
+      _name: 'courseNum2.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 41,
+      _name: 'courseNum2.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 36,
+      _name: 'courseNum2.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 37,
+      _name: 'courseNum2.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 38,
+      _name: 'courseNum2.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 40,
+      _name: 'courseNum2.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 47,
+      _name: 'courseNum3.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 50,
+      _name: 'courseNum3.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 51,
+      _name: 'courseNum3.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 49,
+      _name: 'courseNum3.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 44,
+      _name: 'courseNum3.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 45,
+      _name: 'courseNum3.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 46,
+      _name: 'courseNum3.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 48,
+      _name: 'courseNum3.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 55,
+      _name: 'instructors1.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 58,
+      _name: 'instructors1.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 59,
+      _name: 'instructors1.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 57,
+      _name: 'instructors1.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 52,
+      _name: 'instructors1.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 53,
+      _name: 'instructors1.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 54,
+      _name: 'instructors1.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 56,
+      _name: 'instructors1.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 63,
+      _name: 'instructors2.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 66,
+      _name: 'instructors2.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 67,
+      _name: 'instructors2.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 65,
+      _name: 'instructors2.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 60,
+      _name: 'instructors2.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 61,
+      _name: 'instructors2.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 62,
+      _name: 'instructors2.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 64,
+      _name: 'instructors2.width'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 71,
+      _name: 'instructors3.bottom'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 74,
+      _name: 'instructors3.centerX'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 75,
+      _name: 'instructors3.centerY'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 73,
+      _name: 'instructors3.height'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 68,
+      _name: 'instructors3.left'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 69,
+      _name: 'instructors3.right'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 70,
+      _name: 'instructors3.top'
+    },
+    0
+  ],
+  [
+    Variable {
+      _value: 0,
+      _context: null,
+      _id: 72,
+      _name: 'instructors3.width'
+    },
+    0
+  ],
+  [
+    Variable { _value: 0, _context: null, _id: 101, _name: 'max_1' },
+    0
+  ],
+  [
+    Variable { _value: 0, _context: null, _id: 111, _name: 'max_11' },
+    0
+  ],
+  [
+    Variable { _value: 0, _context: null, _id: 113, _name: 'max_13' },
+    0
+  ],
+  ... 48 more items
+]
+[
+  [ [32m'instructors2.centerX'[39m, [33m45.25[39m ],
+  [ [32m'course2.height'[39m, [33m-10[39m ],
+  [ [32m'instructors1.bottom'[39m, [33m0[39m ],
+  [ [32m'max_11'[39m, [33m-0[39m ],
+  [ [32m'courseNum1.height'[39m, [33m-10[39m ],
+  [ [32m'courseName1.top'[39m, [33m10[39m ],
+  [ [32m'courseNum3.left'[39m, [33m50[39m ],
+  [ [32m'courseName1.centerX'[39m, [33m45.25[39m ],
+  [ [32m'min_26'[39m, [33m10[39m ],
+  [ [32m'course3.bottom'[39m, [33m-0[39m ],
+  [ [32m'max_29'[39m, [33m40.5[39m ],
+  [ [32m'instructors1.width'[39m, [33m-9.5[39m ],
+  [ [32m'course2.centerX'[39m, [33m45.25[39m ],
+  [ [32m'courseNum2.top'[39m, [33m10[39m ],
+  [ [32m'max_13'[39m, [33m40.5[39m ],
+  [ [32m'courseName3.top'[39m, [33m10[39m ],
+  [ [32m'courseName3.centerX'[39m, [33m45.25[39m ],
+  [ [32m'max_47'[39m, [33m0[39m ],
+  [ [32m'courseNum3.bottom'[39m, [33m-0[39m ],
+  [ [32m'courseName2.height'[39m, [33m-10[39m ],
+  [ [32m'max_33'[39m, [33m40.5[39m ],
+  [ [32m'courseNum1.top'[39m, [33m10[39m ],
+  [ [32m'instructors3.top'[39m, [33m10[39m ],
+  [ [32m'courseNum2.left'[39m, [33m50[39m ],
+  [ [32m'courseName1.centerY'[39m, [33m5[39m ],
+  [ [32m'course1.right'[39m, [33m40.5[39m ],
+  [ [32m'min_2'[39m, [33m10[39m ],
+  [ [32m'min_8'[39m, [33m50[39m ],
+  [ [32m'min_12'[39m, [33m50[39m ],
+  [ [32m'course2.left'[39m, [33m50[39m ],
+  [ [32m'nameInstrsGap'[39m, [33m10[39m ],
+  [ [32m'courseNum1.right'[39m, [33m40.5[39m ],
+  [ [32m'course3.left'[39m, [33m50[39m ],
+  [ [32m'instructors3.left'[39m, [33m50[39m ],
+  [ [32m'max_1'[39m, [33m40.5[39m ],
+  [ [32m'courseName3.left'[39m, [33m50[39m ],
+  [ [32m'instructors3.right'[39m, [33m40.5[39m ],
+  [ [32m'instructors2.bottom'[39m, [33m0[39m ],
+  [ [32m'min_38'[39m, [33m10[39m ],
+  [ [32m'max_25'[39m, [33m40.5[39m ],
+  [ [32m'courseNum2.right'[39m, [33m40.5[39m ],
+  [ [32m'courseNum1.bottom'[39m, [33m0[39m ],
+  [ [32m'instructors3.centerY'[39m, [33m5[39m ],
+  [ [32m'max_23'[39m, [33m-0[39m ],
+  [ [32m'min_42'[39m, [33m10[39m ],
+  [ [32m'max_5'[39m, [33m40.5[39m ],
+  [ [32m'courseName2.bottom'[39m, [33m0[39m ],
+  [ [32m'courseNum1.centerX'[39m, [33m45.25[39m ],
+  [ [32m'instructors3.bottom'[39m, [33m-0[39m ],
+  [ [32m'min_4'[39m, [33m50[39m ],
+  [ [32m'max_27'[39m, [33m0[39m ],
+  [ [32m'courseNum3.centerY'[39m, [33m5[39m ],
+  [ [32m'instructors2.centerY'[39m, [33m5[39m ],
+  [ [32m'min_36'[39m, [33m50[39m ],
+  [ [32m'courseNum2.centerX'[39m, [33m45.25[39m ],
+  [ [32m'numNameGap'[39m, [33m9.5[39m ],
+  [ [32m'max_17'[39m, [33m40.5[39m ],
+  [ [32m'courseName3.right'[39m, [33m40.5[39m ],
+  [ [32m'course2.width'[39m, [33m-9.5[39m ],
+  [ [32m'courseName3.width'[39m, [33m-9.5[39m ],
+  [ [32m'max_7'[39m, [33m0[39m ],
+  [ [32m'max_9'[39m, [33m40.5[39m ],
+  [ [32m'max_15'[39m, [33m0[39m ],
+  [ [32m'min_34'[39m, [33m10[39m ],
+  [ [32m'instructors1.left'[39m, [33m50[39m ],
+  [ [32m'courseName1.bottom'[39m, [33m0[39m ],
+  [ [32m'course1.top'[39m, [33m10[39m ],
+  [ [32m'instructors2.width'[39m, [33m-9.5[39m ],
+  [ [32m'min_44'[39m, [33m50[39m ],
+  [ [32m'courseName2.right'[39m, [33m40.5[39m ],
+  [ [32m'instructors1.height'[39m, [33m-10[39m ],
+  [ [32m'courseNum2.height'[39m, [33m-10[39m ],
+  [ [32m'courseNum1.left'[39m, [33m50[39m ],
+  [ [32m'course1.height'[39m, [33m-10[39m ],
+  [ [32m'courseNum3.width'[39m, [33m-9.5[39m ],
+  [ [32m'min_46'[39m, [33m10[39m ],
+  [ [32m'min_28'[39m, [33m50[39m ],
+  [ [32m'courseName1.right'[39m, [33m40.5[39m ],
+  [ [32m'courseNum2.bottom'[39m, [33m0[39m ],
+  [ [32m'course1.centerY'[39m, [33m5[39m ],
+  [ [32m'max_31'[39m, [33m0[39m ],
+  [ [32m'courseNum1.width'[39m, [33m-9.5[39m ],
+  [ [32m'max_37'[39m, [33m40.5[39m ],
+  [ [32m'max_3'[39m, [33m0[39m ],
+  [ [32m'max_21'[39m, [33m40.5[39m ],
+  [ [32m'courseName2.left'[39m, [33m50[39m ],
+  [ [32m'courseGap'[39m, [33m10[39m ],
+  [ [32m'max_19'[39m, [33m0[39m ],
+  [ [32m'courseName3.bottom'[39m, [33m-0[39m ],
+  [ [32m'max_45'[39m, [33m40.5[39m ],
+  [ [32m'nameGuide'[39m, [33m50[39m ],
+  [ [32m'instructors1.top'[39m, [33m10[39m ],
+  [ [32m'courseName2.width'[39m, [33m-9.5[39m ],
+  [ [32m'instructors1.centerY'[39m, [33m5[39m ],
+  [ [32m'course3.height'[39m, [33m-10[39m ],
+  [ [32m'course1.bottom'[39m, [33m0[39m ],
+  [ [32m'course2.bottom'[39m, [33m0[39m ],
+  [ [32m'instructors1.centerX'[39m, [33m45.25[39m ],
+  [ [32m'course3.width'[39m, [33m-9.5[39m ],
+  [ [32m'course3.centerY'[39m, [33m5[39m ],
+  [ [32m'min_24'[39m, [33m50[39m ],
+  [ [32m'min_18'[39m, [33m10[39m ],
+  [ [32m'min_40'[39m, [33m50[39m ],
+  [ [32m'courseNum3.top'[39m, [33m10[39m ],
+  [ [32m'courseNum2.centerY'[39m, [33m5[39m ],
+  [ [32m'courseName3.centerY'[39m, [33m5[39m ],
+  [ [32m'courseNum2.width'[39m, [33m-9.5[39m ],
+  [ [32m'course1.left'[39m, [33m50[39m ],
+  [ [32m'min_32'[39m, [33m50[39m ],
+  [ [32m'min_14'[39m, [33m10[39m ],
+  [ [32m'courseNum3.height'[39m, [33m-10[39m ],
+  [ [32m'min_6'[39m, [33m10[39m ],
+  [ [32m'course2.top'[39m, [33m10[39m ],
+  [ [32m'course3.right'[39m, [33m40.5[39m ],
+  [ [32m'min_0'[39m, [33m50[39m ],
+  [ [32m'max_43'[39m, [33m0[39m ],
+  [ [32m'max_35'[39m, [33m-0[39m ],
+  [ [32m'courseNum1.centerY'[39m, [33m5[39m ],
+  [ [32m'instructors2.top'[39m, [33m10[39m ],
+  [ [32m'courseName2.top'[39m, [33m10[39m ],
+  [ [32m'min_20'[39m, [33m50[39m ],
+  [ [32m'instructors3.width'[39m, [33m-9.5[39m ],
+  [ [32m'instructors2.right'[39m, [33m40.5[39m ],
+  [ [32m'courseName1.left'[39m, [33m50[39m ],
+  [ [32m'courseName2.centerX'[39m, [33m45.25[39m ],
+  [ [32m'courseName1.height'[39m, [33m-10[39m ],
+  [ [32m'instructors1.right'[39m, [33m40.5[39m ],
+  [ [32m'instructors3.height'[39m, [33m-10[39m ],
+  [ [32m'instructors3.centerX'[39m, [33m45.25[39m ],
+  [ [32m'courseName2.centerY'[39m, [33m5[39m ],
+  [ [32m'min_10'[39m, [33m10[39m ],
+  [ [32m'courseName1.width'[39m, [33m-9.5[39m ],
+  [ [32m'min_30'[39m, [33m10[39m ],
+  [ [32m'instructors2.left'[39m, [33m50[39m ],
+  [ [32m'course2.right'[39m, [33m40.5[39m ],
+  [ [32m'course3.centerX'[39m, [33m45.25[39m ],
+  [ [32m'instructors2.height'[39m, [33m-10[39m ],
+  [ [32m'course3.top'[39m, [33m10[39m ],
+  [ [32m'max_39'[39m, [33m0[39m ],
+  [ [32m'course1.width'[39m, [33m-9.5[39m ],
+  [ [32m'min_22'[39m, [33m10[39m ],
+  [ [32m'course1.centerX'[39m, [33m45.25[39m ],
+  [ [32m'courseName3.height'[39m, [33m-10[39m ],
+  [ [32m'max_41'[39m, [33m40.5[39m ],
+  [ [32m'courseNum3.centerX'[39m, [33m45.25[39m ],
+  [ [32m'courseNum3.right'[39m, [33m40.5[39m ],
+  [ [32m'course2.centerY'[39m, [33m5[39m ],
+  [ [32m'min_16'[39m, [33m50[39m ]
+]
