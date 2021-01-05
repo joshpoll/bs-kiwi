@@ -240,7 +240,7 @@ module Lower = {
     (aexprAux(ae), [], [])
   }
 
-  // Currently uses simple encoding.
+  // The interesting bits: lowering max and min.
   let cexpr = ce => {
     let newVarName = switch ce {
     | Max(_) => "max_" ++ genFresh()
@@ -256,28 +256,42 @@ module Lower = {
       // throw out fields we know will be empty. TODO would be nice to have a monad here!
       let (max, _, _) = aexpr(newVarExpr)
       let (aes, _, _) = Belt.Array.map(aes, aexpr)->unzip3
-      (
-        max,
-        [newVar],
-        aes->Belt.Array.map(ae => {
+      let boundConstraints = aes->Belt.Array.map(ae => {
           KiwiInterface.lhs: ae,
           op: Le,
           rhs: max,
           strength: Kiwi.Strength.required,
-        }),
+        })
+      let tightConstraints = aes->Belt.Array.map(ae => {
+          KiwiInterface.lhs: ae,
+          op: Eq,
+          rhs: max,
+          strength: Kiwi.Strength.weak,
+        })
+      (
+        max,
+        [newVar],
+        Belt.Array.concat(boundConstraints, tightConstraints),
       )
     | Min(aes) =>
       let (min, _, _) = aexpr(newVarExpr)
       let (aes, _, _) = Belt.Array.map(aes, aexpr)->unzip3
+      let boundConstraints = aes->Belt.Array.map(ae => {
+          KiwiInterface.lhs: ae,
+          op: Ge,
+          rhs: min,
+          strength: Kiwi.Strength.required,
+        })
+      let tightConstraints = aes->Belt.Array.map(ae => {
+          KiwiInterface.lhs: ae,
+          op: Eq,
+          rhs: min,
+          strength: Kiwi.Strength.weak,
+        })
       (
         min,
         [newVar],
-        aes->Belt.Array.map(ae => {
-          KiwiInterface.lhs: min,
-          op: Le,
-          rhs: ae,
-          strength: Kiwi.Strength.required,
-        }),
+        Belt.Array.concat(boundConstraints, tightConstraints),
       )
     }
   }

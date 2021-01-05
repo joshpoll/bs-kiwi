@@ -85,6 +85,42 @@
                 "value": "max_0"
             },
             "strength": 1001001000
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "a"
+            },
+            "op": "==",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "b"
+            },
+            "op": "==",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1
+        },
+        {
+            "lhs": {
+                "tag": "var",
+                "value": "c"
+            },
+            "op": "==",
+            "rhs": {
+                "tag": "var",
+                "value": "max_0"
+            },
+            "strength": 1
         }
     ]
 }
