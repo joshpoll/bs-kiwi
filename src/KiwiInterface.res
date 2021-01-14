@@ -116,6 +116,8 @@ module Encode = {
   }
 }
 
+exception VarIdNotFound(string)
+
 let convertExpr = (varIdMap, e) => {
   // keep varIdMap in scope
   let rec convertExprAux = e => {
@@ -125,7 +127,7 @@ let convertExpr = (varIdMap, e) => {
     | Var(vid) =>
       switch varIdMap->Belt.HashMap.String.get(vid) {
       | Some(v) => mkVarExpression(v)
-      | None => raise(Not_found)
+      | None => raise(VarIdNotFound(vid))
       }
     | Add(e1, e2) => plus(convertExprAux(e1), convertExprAux(e2))
     | Sub(e1, e2) => minus(convertExprAux(e1), convertExprAux(e2))
